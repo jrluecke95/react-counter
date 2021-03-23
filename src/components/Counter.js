@@ -1,4 +1,7 @@
 import React from 'react'
+import Display from './Display';
+import Increment from './Increment';
+import Decrement from './Decrement';
 
 class Counter extends React.Component {
   constructor(props) {
@@ -14,7 +17,7 @@ class Counter extends React.Component {
     })
   }
 
-  decrease = () => {
+  decrement = () => {
     this.setState({
       count: this.state.count - 1
     })
@@ -23,9 +26,9 @@ class Counter extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.decrease}>-</button>
-        <span>{this.state.count}</span>
-        <button onClick={this.increment}>+</button>
+        <Decrement handleClick={this.decrement} />
+        <Display count={this.state.count}/>
+        <Increment handleClick={this.increment}/>
       </div>
     );
   }
