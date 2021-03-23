@@ -4,7 +4,7 @@ class Counter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: this.props.initialCount || 42
+      count: typeof props.initialCount !== "number" ? 42 : props.initialCount
     }
   }
   // this arrow function allows us to access 'this'
